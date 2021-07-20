@@ -17,6 +17,12 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "StockExchange")
+//properties defined here can be returned as requestbody for 
+//a restcontroller post call,any additional fields you want to
+//return from the post,you can add properties to this entity
+		//and use the requstbody json of this entity
+//otheroption of retyrning valyes instead of request body of entity
+//is to use a map of strings
 public class Stockexchange {
 	
 
