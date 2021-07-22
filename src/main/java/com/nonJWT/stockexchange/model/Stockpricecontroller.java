@@ -33,7 +33,7 @@ Stockpricerepository stkpricerepo;
 
 //@CrossOrigin(origins ="http://reactive01.herokuapp.com")
 //@CrossOrigin(origins ="http://localhost:3000")
-@RequestMapping(value = "/addstockprices",method=RequestMethod.POST)
+@RequestMapping(value = "/addstockprices",method=RequestMethod.POST, headers = "Accept=application/json" )
 
 public  ResponseEntity<Object> stockpriceapi(@RequestBody Stockprice stockprice) throws ClassNotFoundException, IOException {
 
