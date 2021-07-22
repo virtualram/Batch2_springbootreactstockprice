@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 @Table(name = "Stockprice")
 public class Stockprice {
@@ -30,6 +32,9 @@ public class Stockprice {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Company company;
 	private Date datee;
+
+    //for local thime formatter is needed otherwise you will get parse error
+	 @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")  
 	private LocalTime timee;//change this to localtime to time to avoid errors
 	private float shareprice;
 	public Stockprice() {
@@ -67,7 +72,6 @@ public class Stockprice {
 
 
 	
-
 	
 
 	public Stockprice( String exchangename, String companycode,  
@@ -77,7 +81,7 @@ public class Stockprice {
 		this.exchangename = exchangename;
 		this.companycode = companycode;
 		//this.localdatetime = localdatetime;
-		this.company = company;
+		//this.company = company;
 		this.datee = datee;
 		this.timee= timee;
 		this.shareprice = shareprice;
