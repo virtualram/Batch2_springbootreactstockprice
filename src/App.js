@@ -52,8 +52,8 @@ class App extends React.Component {
   };
 
 
-//let authurl  = 'http://127.0.0.1:8080/addstockprices';
-let authurl =   'https://javaphase3socgen.herokuapp.com/addstockprices';
+let authurl  = 'https://javaphase3socgenjuly.herokuapp.com/addstockprices';
+
 //this may fail as many records in user are laredy tharer
 console.log(myInit1.body);
 fetch(authurl, myInit1)
