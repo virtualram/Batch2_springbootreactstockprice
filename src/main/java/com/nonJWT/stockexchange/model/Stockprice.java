@@ -32,12 +32,12 @@ public class Stockprice {
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Company company;
 	private Date datee;
-
+//test
     //for local thime formatter is needed otherwise you will get parse error
 	 @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm:ss")  
 	private LocalTime timee;//change this to localtime to time to avoid errors
 	private float shareprice;
-	public Stockprice() {
+	public Stockprice() {   
 		super();
 		// TODO Auto-generated constructor stub
 	}
