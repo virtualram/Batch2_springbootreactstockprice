@@ -7,11 +7,11 @@ import './App.css';
 class App extends React.Component {
   constructor(props) {
     super(props);
-    let today = new Date(),
+    let today = new Date();
     //get time from date
-    timex = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+   let timex = today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     this.state = {
-      exchangename:'',
+      exchangename:'',  
       companycode :'',
       datee : new Date(),
       timee : timex,
