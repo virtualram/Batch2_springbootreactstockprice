@@ -1,5 +1,11 @@
 package com.nonJWT.stockexchange.model;
-
+//pass map of string in requestbody ,instead of pojo class to get
+	// non entity based params
+	// you can also use a POJO instead of map of strings
+	//but then you have to add 2 properties to the entity class
+	//companycode and exchangename ,so that they can be passed
+	// and searched and then the company and exchange properties
+	//can be updated
 import java.io.IOException;
 import java.net.URI;
 import java.util.ArrayList;
@@ -61,20 +67,9 @@ public class Maincontroller {
 
 		return ResponseEntity.created(location).build();
 	}
-	//properties defined here can be returned as requestbody for 
-	//a restcontroller post call,any additional fields you want to
-	//return from the post,you can add properties to this entity
-			//and use the requstbody json of this entity
-	//otheroption of retyrning valyes instead of request body of entity
-	//is to use a map of strings
+	//use requestbody as map of strings or pojo entity
 	@RequestMapping(value = "/mapcompanycode", method = RequestMethod.POST)
-	// pass map of string in requestbody ,instead of pojo class to get
-	// non entity based params
-	// you can also use a POJO instead of map of strings
-	//but then you have to add 2 properties to the entity class
-	//companycode and exchangename ,so that they can be passed
-	// and searched and then the company and exchange properties
-	//can be updated
+	
 	public String mapcode(@RequestBody Map<String, String> text) {
 	
 		//you will search for company or stockexchange by name and then pass the returned company entity and 
